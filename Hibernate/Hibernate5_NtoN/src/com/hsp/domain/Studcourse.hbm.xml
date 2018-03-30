@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping package="com.hsp.domain">
+
+	<class name="Studcourse" schema="c##scott">
+		<id name="stucourseid" type="java.lang.Integer">
+			<column name="STUCOURSEID"  />
+			<generator class="sequence" >
+			<param name="sequence">studcourse_seq</param>
+			</generator>
+		</id>
+
+		<many-to-one name="course" class="com.hsp.domain.Course">
+			<column name="CID" />
+		</many-to-one>
+
+		<many-to-one name="student" class="com.hsp.domain.Student">
+			<column name="SID" />
+		</many-to-one>
+
+		<property name="grade" type="java.lang.Integer">
+			<column name="GRADE" not-null="true" />
+		</property>
+
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+原文地址:
+https://www.jianshu.com/p/4e25e25b62c2
+
+安装gradle
+Windows用户在powershell下(需要先安装scoop ):
+scoop install gradle
+其他系统参考:
+https://gradle.org/install/
+
+建立一个gradle工程的步骤:
+1.新建一个工程目录todo
+在此目录下使用gradle进行初始化 gradle init
+这个命令帮我们建立一个一个使用gradle进行管理的模版工程：
+
+
+build.gradle：有过Android开发经验的童鞋可能觉得很亲切的，这个就是我们用于管理和配置工程的核心文件了。
+
+gradlew：用于 *nix 环境下的gradle wrapper文件。
+
+gradlew.bat：用于 Windows 环境下的gradle wrapper文件
+
+setting.gradle：用于管理多项目的gradle工程时使用，单项目时可以不做理会。
+
+gradle目录：wrapper的jar和属性设置文件所在的文件夹。
+2.编写好build.gradle 文件后,导入Intellij IDEA
+在file -> settings 找到gradle将Gradle home路径填上,我的是C:/Users/zpxuz/scoop/apps/gradle/current
+使用IDEA的import project功能选中 build.gradle，将工程导入。
+由于是个gradle工程，请把 View->Tools Window->Gradle 的视图窗口调出来。
+点击左上角的刷新按钮可以将所有依赖下载类库下来。
+
+
+
+

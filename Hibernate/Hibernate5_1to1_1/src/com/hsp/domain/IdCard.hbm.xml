@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hsp.domain">
+
+	<class name="IdCard" schema="c##scott">
+	<id name="id" type="java.lang.Integer">
+	<!-- 这里是基于主键的one2one 需要用外键生成策略 -->
+	<generator class="foreign">
+	<!-- 这里的person是指的跟哪个属性是one2one -->
+	<param name="property">person</param>
+	</generator>
+	</id>
+	<property name="validateDte" type="java.util.Date" 
+	column="validateDte" />
+	<!-- 这里配置IdCard和Person的one2one关系 -->
+	<!-- 需要配置constrained="true"生成外键 -->
+	<one-to-one name="person" constrained="true"></one-to-one>
+	</class>
+</hibernate-mapping>

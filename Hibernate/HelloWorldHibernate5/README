@@ -1,0 +1,27 @@
+使用环境： 
+1. Hibernate-5.0.12
+2. MyEclipse-2014
+3. jdk1.7 
+4. Oracle-12.1.0
+
+步骤:
+1. 拷贝 Hibernate5.0\lib\required中所有jar包和Oracle数据库驱动ojdbc7.jar
+   到项目WebRoot/WEB-INF/lib目录下
+2. 全局配置文件hibernate.cfg.xml到类路径的根目录下
+3. 创建类(表)  如User.java
+4. 编写类表映射文件  如User.hbm.xml
+5. 将映射文件User.hbm.xml配置到全局配置中hibernate.cfg.xml
+6. 使用Hibernate
+(1) 加载配置文件
+		Configuration configuration = new Configuration().configure();
+(2) 创建Session工厂
+		SessionFactory factory = configuration.buildSessionFactory();
+(3) 创建Session对象
+		Session session = factory.openSession();
+(4) 操作数据(DML操作需要事务管理Transaction)
+        Transaction tx = session.beginTransaction();
+        Integer userId = (Integer) session.save(new User("测试", "666666"));
+        System.out.println("UserId:"+userId);
+        tx.commit();
+(5)关闭,释放资源
+		session.close();

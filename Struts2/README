@@ -1,0 +1,45 @@
+Struts2 的模型-视图-控制器模式是通过以下五个核心部分进行实现的：
+操作（Actions）
+拦截器（Interceptors）
+值栈（Value Stack）/OGNL
+结果（Result）/结果类型
+视图技术
+
+标签:
+Struts2 控制标签
+if和else标签
+iterator标签/Sort标签/Subset标签  迭代/排序/取子集
+merge标签 合并
+append标签 附加
+generator标签 运行时创建列表或数组 迭代
+
+Struts2 数据标签
+action标签  jsp页面调用action
+include标签  jsp页面调用除了action之外的任何资源
+bean标签
+date标签
+param标签
+property标签
+push标签
+set标签
+text标签
+url标签  动态超链接
+
+Struts2 表单标签
+Struts2 Ajax标签
+
+基本配置过程:
+jsp页面<--->struts.xml映射文件<--->action操作
+
+常用库:
+commons-fileupload-1.3.2.jar
+commons-io-2.2.jar
+commons-lang-2.4.jar
+commons-lang3-3.2.jar
+commons-logging-1.1.3.jar
+freemarker-2.3.22.jar
+javassist-3.11.0.GA.jar
+ognl-3.0.21.jar
+struts2-core-2.3.34.jar
+struts2-dojo-plugin-2.3.34.jar
+xwork-core-2.3.34.jar

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.devMode" value="true" />
+   <package name="helloworld" extends="struts-default">
+	   <interceptors>
+	      <interceptor-stack name="basicStack">
+			   <interceptor-ref name="exception"/>
+			   <interceptor-ref name="servletConfig"/>
+			   <interceptor-ref name="prepare"/>
+			   <interceptor-ref name="checkbox"/>
+			   <interceptor-ref name="params"/>
+			   <interceptor-ref name="conversionError"/>
+			   <interceptor-ref name="logger"/>
+	      </interceptor-stack>
+	   </interceptors>  
+      <action name="hello" 
+            class="cn.w3cschool.struts2.HelloWorldAction" 
+            method="execute">
+            <!-- 此处异常也可以全局映射 -->
+            <exception-mapping exception="java.lang.NullPointerException" result="error" />
+            <interceptor-ref name="basicStack"/>
+            <result name="success">/HelloWorld.jsp</result>
+            <result name="error">/error.jsp</result>
+      </action>
+      <action name="upload" 
+            class="cn.w3cschool.struts2.uploadFile" 
+            method="execute">
+            <result name="success">/success.jsp</result>
+            <result name="error">/error.jsp</result>
+      </action>
+      <action name="empinfo" 
+            class="cn.w3cschool.struts2.Employee" 
+            method="execute">
+            <result name="input">/index.jsp</result>
+            <result name="success">/success.jsp</result>
+      </action>
+      <action name="system" 
+            class="cn.w3cschool.struts2.SystemDetails" 
+            method="execute">
+            <result name="success">/System.jsp</result>
+      </action>
+      <action name="myLabel1" 
+            class="cn.w3cschool.struts2.HelloWorld" 
+            method="execute">
+            <result name="success">/Label1.jsp</result>
+      </action>
+      <action name="employee1" 
+            class="cn.w3cschool.struts2.Employee1" 
+            method="execute">
+            <result name="success">/employee1.jsp</result>
+      </action>
+      <action name="employee2" 
+            class="cn.w3cschool.struts2.Employee1" 
+            method="execute">
+            <result name="success">/employee2.jsp</result>
+      </action>
+      <action name="employee3" 
+            class="cn.w3cschool.struts2.Employee1" 
+            method="execute">
+            <result name="success">/employee3.jsp</result>
+      </action>
+      <action name="hello1" 
+            class="cn.w3cschool.struts2.HelloWorld" 
+            method="execute">
+            <result name="success">/HelloWorld1.jsp</result>
+      </action>
+      <action name="employee4" 
+            class="cn.w3cschool.struts2.HelloWorld" 
+            method="execute">
+            <result name="success">/employee4.jsp</result>
+      </action>
+      <action name="employee5" 
+            class="cn.w3cschool.struts2.HelloWorld2" 
+            method="execute">
+            <result name="success">/employee5.jsp</result>
+      </action>
+      <action name="employee6" 
+            class="cn.w3cschool.struts2.HelloWorld" 
+            method="execute">
+            <result name="success">/employee6.jsp</result>
+      </action>
+      <action name="employee7" 
+            class="cn.w3cschool.struts2.HelloWorld" 
+            method="execute">
+            <result name="success">/employee7.jsp</result>
+      </action>
+      <action name="hello3" 
+            class="cn.w3cschool.struts2.HelloWorld3" 
+            method="execute">
+            <result name="success">/HelloWorld3.jsp</result>
+      </action>
+      <action name="hello4" 
+            class="cn.w3cschool.struts2.SystemDetails" 
+            method="execute">
+            <result name="success">/HelloWorld4.jsp</result>
+      </action>
+      <action name="hello5" 
+            class="cn.w3cschool.struts2.HelloWorld" 
+            method="execute">
+            <result name="success">/HelloWorld5.jsp</result>
+      </action>
+      <action name="hello6" 
+            class="cn.w3cschool.struts2.HelloWorld" 
+            method="execute">
+            <result name="success">/HelloWorld6.jsp</result>
+      </action>
+      <action name="index">
+            <result >/index.jsp</result>
+      </action>
+      <action name="ui1">
+            <result >/ui1.jsp</result>
+      </action>
+      <action name="ui2">
+            <result >/ui2.jsp</result>
+      </action>
+      <action name="ui3">
+            <result >/ui3.jsp</result>
+      </action>
+      <action name="ajax">
+            <result >/ajax.jsp</result>
+      </action>
+   </package>
+</struts>

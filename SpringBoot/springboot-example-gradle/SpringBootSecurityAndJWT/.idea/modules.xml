@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SpringBootSecurityAndJWT.iml" filepath="$PROJECT_DIR$/SpringBootSecurityAndJWT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SpringBootSecurityAndJWT_main.iml" filepath="$PROJECT_DIR$/.idea/modules/SpringBootSecurityAndJWT_main.iml" group="SpringBootSecurityAndJWT" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SpringBootSecurityAndJWT_test.iml" filepath="$PROJECT_DIR$/.idea/modules/SpringBootSecurityAndJWT_test.iml" group="SpringBootSecurityAndJWT" />
+    </modules>
+  </component>
+</project>

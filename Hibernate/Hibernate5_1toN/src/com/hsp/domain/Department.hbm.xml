@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hsp.domain">
+
+	<class name="Department" schema="c##scott">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="sequence" >
+			<param name="sequence">department_seq</param>
+			</generator>
+		</id>
+
+		<property name="name" type="java.lang.String">
+			<column name="name" length="64" not-null="true" />
+		</property>
+		<!-- 配置one2many关系 -->
+		<!-- cascade级联save-update  -->
+		<set name="students" cascade="save-update">
+			<!-- 指定对应students的外键名 -->
+			<key column="department_id" />
+			<one-to-many class="com.hsp.domain.Students" />
+		</set>
+
+	</class>
+</hibernate-mapping>

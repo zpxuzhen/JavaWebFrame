@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+    
+   <context:annotation-config/>
+   <!-- bean definitions go here -->
+   
+   <bean id="requiredStudent" class="com.ioc.DI.annotation.Required.Student">
+      <property name="name"  value="Zara" />
+      <property name="age"  value="11" />
+   </bean>
+   
+   <bean id="textEditor" class="com.ioc.DI.annotation.Autowired.TextEditor">
+   </bean>
+   <bean id="spellChecker" class="com.ioc.DI.annotation.Autowired.SpellChecker">
+   </bean>
+   
+   <bean id="profile" class="com.ioc.DI.annotation.Qualifier.Profile">
+   </bean>
+   <bean id="student1" class="com.ioc.DI.annotation.Qualifier.Student">
+      <property name="name"  value="Zara" />
+      <property name="age"  value="11"/>
+   </bean>
+   <bean id="student2" class="com.ioc.DI.annotation.Qualifier.Student">
+      <property name="name"  value="Nuha" />
+      <property name="age"  value="2"/>
+   </bean>
+   
+   <bean id="helloWorld" class="com.ioc.DI.annotation.JSR250.HelloWorld">
+       <property name="message" value="Hello World!"/>
+   </bean>
+   <bean id="resourceSpellChecker" class="com.ioc.DI.annotation.JSR250.SpellChecker">
+   </bean>
+	
+</beans>

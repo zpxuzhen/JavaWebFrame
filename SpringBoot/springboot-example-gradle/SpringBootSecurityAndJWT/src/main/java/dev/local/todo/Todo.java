@@ -1,0 +1,15 @@
+package dev.local.todo;
+
+import dev.local.user.User;
+import lombok.Data;
+import org.springframework.data.annotation.Id;
+
+
+@Data
+public class Todo {
+    @Id private String id;
+    private String desc;
+    private boolean completed;
+    private User user;
+
+}

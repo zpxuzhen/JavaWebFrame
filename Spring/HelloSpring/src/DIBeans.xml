@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <bean id="textEditor" class="com.ioc.DI.TextEditor">
+      <constructor-arg ref="spellChecker"/>
+   </bean>
+   <bean id="textEditor2" class="com.ioc.DI.TextEditor">
+      <constructor-arg type="int" value="2001"/>
+      <constructor-arg type="java.lang.String" value="Zara"/>
+   </bean>
+   <bean id="textEditor3" class="com.ioc.DI.TextEditor">
+      <constructor-arg index="0" value="1111"/>
+      <constructor-arg index="1" value="String"/>
+   </bean>
+   <bean id="textEditor4" class="com.ioc.DI.TextEditor">
+      <property name="spellChecker" ref="spellChecker"/>
+   </bean>
+
+   <bean id="spellChecker" class="com.ioc.DI.SpellChecker">
+   </bean>
+ 
+ 	<!-- 注入集合示例 -->
+ 
+    <!-- Definition for javaCollection -->
+   <bean id="javaCollection" class="com.ioc.DI.JavaCollection">
+
+      <!-- results in a setAddressList(java.util.List) call -->
+      <property name="addressList">
+         <list>
+            <value>INDIA</value>
+            <value>Pakistan</value>
+            <value>USA</value>
+            <value>USA</value>
+         </list>
+      </property>
+
+      <!-- results in a setAddressSet(java.util.Set) call -->
+      <property name="addressSet">
+         <set>
+            <value>INDIA</value>
+            <value>Pakistan</value>
+            <value>USA</value>
+            <value>USA</value>
+        </set>
+      </property>
+
+      <!-- results in a setAddressMap(java.util.Map) call -->
+      <property name="addressMap">
+         <map>
+            <entry key="1" value="INDIA"/>
+            <entry key="2" value="Pakistan"/>
+            <entry key="3" value="USA"/>
+            <entry key="4" value="USA"/>
+            <entry key="5"><null/></entry>
+            <entry key="6" value=""/>
+         </map>
+      </property>
+
+      <!-- results in a setAddressProp(java.util.Properties) call -->
+      <property name="addressProp">
+         <props>
+            <prop key="one">INDIA</prop>
+            <prop key="two">Pakistan</prop>
+            <prop key="three">USA</prop>
+            <prop key="four">USA</prop>
+         </props>
+      </property>
+
+   </bean>  
+   
+    <!-- 自动装配示例 -->
+    
+    <bean id="textEditor5" class="com.ioc.DI.TextEditor"
+    	autowire="byName">
+      <property name="tName" value="Generic Text Editor"/>
+   </bean>
+    <bean id="textEditor6" class="com.ioc.DI.TextEditor"
+    	autowire="byType">
+      <property name="tName" value="Generic Text Editor"/>
+   </bean>
+   <bean id="textEditor7" class="com.ioc.DI.TextEditor" 
+      autowire="constructor">
+      <constructor-arg value="111111111"/>
+   </bean>
+	
+</beans>

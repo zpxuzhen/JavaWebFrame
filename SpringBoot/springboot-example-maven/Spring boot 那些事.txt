@@ -1,0 +1,17 @@
+https://www.bysocket.com/?page_id=1639
+
+https://github.com/JeffLi1993/springboot-learning-example
+
+
+『 基础 - 入门篇 』
+《Spring Boot 之 HelloWorld 详解》-----springbootHelloworld
+《Spring Boot 之配置文件详解》-----springbootProperties
+
+『 基础 - Web 业务开发篇 』
+《Spring Boot 实现 Restful 服务，基于 HTTP / JSON 传输》-----springbootRestful
+《Spring Boot HTTP over JSON 的错误码异常处理》-----springbootValidationOverjson
+
+『 基础 – 数据存储篇 』
+《Spring Boot 整合 Mybatis 的完整 Web 案例》-----springbootMybatis
+《Spring Boot 整合 Mybatis 实现 Druid 多数据源配置》-----springbootMybatisMutilDatasource
+

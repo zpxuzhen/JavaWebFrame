@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd">
+	
+	<!-- Initialization for data source -->
+   <bean id="dataSource" 
+      class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+      <property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:ORCL"/>
+      <property name="username" value="c##scott"/>
+      <property name="password" value="m123"/>
+   </bean>
+    
+   <tx:advice id="txAdvice"  transaction-manager="transactionManager">
+      <tx:attributes>
+      <tx:method name="create"/>
+      </tx:attributes>
+   </tx:advice>
+
+   <aop:config>
+      <aop:pointcut id="createOperation" 
+      expression="execution(* com.transaction.t2.StudentJDBCTemplate.create(..))"/>
+      <aop:advisor advice-ref="txAdvice" pointcut-ref="createOperation"/>
+   </aop:config>
+
+   <!-- Initialization for TransactionManager -->
+   <bean id="transactionManager"
+   class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+      <property name="dataSource"  ref="dataSource" />    
+   </bean>
+
+   <!-- Definition for studentJDBCTemplate bean -->
+   <bean id="studentJDBCTemplate"  
+   class="com.transaction.t2.StudentJDBCTemplate">
+      <property name="dataSource"  ref="dataSource" />  
+   </bean>
+    
+</beans>

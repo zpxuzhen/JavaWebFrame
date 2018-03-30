@@ -1,0 +1,48 @@
+入门资料: http://www.mybatis.org/mybatis-3/zh/index.html
+入门案例: HelloWorldMyBatis3
+参考: http://blog.csdn.net/qq_32166627/article/details/70741729
+
+开发步骤(Mapper代理开发模式):
+(1)编写POJO类,DAO接口(mapper接口)和mapper映射文件,要遵循Mapper开发规范.
+(2)编写全局配置文件,并注册mapper映射文件.
+(3)编写测试程序.
+
+程序编写步骤:
+(1)读取全局配置文件
+(2)获取SqlSessionFactory
+(3)获取SqlSession
+(4)获取Mapper,通过Mapper调用方法操作数据库
+(5)DML操作需要session.commit()提交事务
+
+Mapper开发规范:
+(1)mapper接口的方法参数多个的话,参考https://www.cnblogs.com/EasonJim/p/7066717.html
+(2)mapper接口和映射文件相对应:
+mapper接口<=====>映射文件
+全限定名<------->namespace
+方法名<--------->id
+参数类型<----------->parameterType
+返回值类型<--------->resultType或resultMap中的type
+
+需要的jar库:
+mybatis-x.x.x.jar和数据库驱动,比如ojdbc7.jar
+
+
+作用域（Scope）和生命周期:
+SqlSessionFactoryBuilder 实例的最佳作用域是方法作用域（也就是局部方法变量）.
+SqlSessionFactory 的最佳作用域是应用作用域。有很多方法可以做到，最简单的就是使用单例模式或者静态单例模式。
+SqlSession 的实例不是线程安全的，因此是不能被共享的，所以它的最佳的作用域是请求或方法作用域。
+Mapper Instances映射器实例的最佳作用域是方法作用域。
+
+XML 映射配置文件:
+http://www.mybatis.org/mybatis-3/zh/configuration.html
+Mapper XML 文件:
+http://www.mybatis.org/mybatis-3/zh/sqlmap-xml.html
+动态 SQL:
+http://www.mybatis.org/mybatis-3/zh/dynamic-sql.html
+Java API:
+http://www.mybatis.org/mybatis-3/zh/java-api.html
+
+
+技巧:安装Mybatis Generator插件,自动生成代码
+https://github.com/mybatis/generator
+

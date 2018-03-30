@@ -1,0 +1,22 @@
+基本使用例子:
+HelloWorldHibernate5  这个例子使用xml映射表,也可以用注释方式.
+
+关系映射:
+[一对一]:
+Hibernate5_1to1_1(基于主键)
+Hibernate5_1to1_2(基于外键)
+[一对多]:
+Hibernate5_1toN 
+[多对一]:
+Hibernate5_Nto1
+[多对多]:
+Hibernate5_NtoN 
+
+注意:懒加载,有四种方式解决
+1.显示初始化  Hibernate.initialize(A.B)
+2.修改对象关系文件,让lazy=false,即关闭懒加载
+3.在web中使用过滤器,http://blog.csdn.net/u013943420/article/details/71246316
+4.在SSH框架中,使用spring提供的openSessionView
+http://blog.csdn.net/chunxing8238/article/details/78501193
+方法三和四是:延长了session关闭的时间,session的生命周期变长
+
